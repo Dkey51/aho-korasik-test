@@ -13,6 +13,7 @@ export interface ITheme {
     error: chalk.Chalk;
     info: chalk.Chalk;
     debug: chalk.Chalk;
+    gray: chalk.Chalk;
     
     // Специальные для визуализации
     node: chalk.Chalk;

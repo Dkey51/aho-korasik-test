@@ -20,15 +20,16 @@ export class FailureLinkBuilder {
         while (queue.length) {
             const current = queue.shift()!;
             
-            current.children.forEach((child, char) => {
-                // Поиск fail-ссылки для текущего ребенка
-                const failNode = this.findFailNode(current, char) ?? root;
+            // ИСПРАВЛЕНО: используем _ для неиспользуемой переменной char
+            current.children.forEach((child, _) => {
+                // Находим fail-ссылку через родителя
+                const failNode = this.findFailNode(current, child.edgeChar!) ?? root;
                 
                 child.failLink = failNode;
                 child.output = [...child.output, ...failNode.output];
                 queue.push(child);
                 
-                logger.debug(`Fail link: '${char}' → ${failNode.getPath() || 'root'}`);
+                logger.debug(`Fail link: '${child.edgeChar}' → ${failNode.getPath() || 'root'}`);
             });
         }
     };

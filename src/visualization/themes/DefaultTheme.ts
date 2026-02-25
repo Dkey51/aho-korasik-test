@@ -11,6 +11,7 @@ export const colors: ITheme = {
     error: chalk.red,
     info: chalk.blue,
     debug: chalk.gray,
+    gray: chalk.gray,
     
     node: chalk.cyan,
     edge: chalk.gray,

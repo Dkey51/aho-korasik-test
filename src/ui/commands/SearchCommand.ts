@@ -1,8 +1,9 @@
 import inquirer from 'inquirer';
 import { BaseCommand } from './Command';
 import { App } from '../App';
-import { TableRenderer } from '../../visualization/renderers/TableRenderer';
+
 import { SearchRenderer } from '../../visualization/renderers/SearchRenderer';
+import { TableRenderer } from '../../visualization/renderers/TableRenderer';
 
 export class SearchCommand extends BaseCommand {
     execute = async (app: App): Promise<void> => {
